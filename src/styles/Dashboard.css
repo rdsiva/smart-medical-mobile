@@ -1,0 +1,570 @@
+/* Dashboard Styles */
+.dashboard {
+  position: relative;
+  padding-bottom: 70px; /* Space for bottom nav */
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Header with greeting */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #e3f2fd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2196F3;
+  margin-right: 15px;
+}
+
+.greeting-text h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.greeting-text p {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Quick access cards */
+.quick-access-cards {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+.quick-card {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin: 0 5px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 10px;
+  font-size: 20px;
+}
+
+.medication-icon {
+  background-color: #e8f5e9;
+  color: #4caf50;
+}
+
+.appointment-icon {
+  background-color: #e3f2fd;
+  color: #2196F3;
+}
+
+.vitals-icon {
+  background-color: #fff3e0;
+  color: #ff9800;
+  font-size: 24px;
+}
+
+.card-title {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.card-count {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Info cards for medication and appointment */
+.info-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 0 15px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.info-card h3 {
+  margin: 0 0 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.medication-details, .appointment-details {
+  display: flex;
+  align-items: center;
+}
+
+.med-icon, .apt-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.med-icon {
+  background-color: #e8f5e9;
+  color: #4caf50;
+}
+
+.apt-icon {
+  background-color: #e3f2fd;
+  color: #2196F3;
+}
+
+.med-info, .apt-info {
+  flex: 1;
+}
+
+.med-info h4, .apt-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.med-info p, .apt-info p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.med-time, .apt-time {
+  font-weight: 600;
+  color: #2196F3;
+}
+
+/* AI Assistant prompt */
+/* Update the AI Assistant prompt styles */
+.ai-assistant-prompt {
+  background-color: #e3f2fd;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  margin: 0 15px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ai-assistant-prompt:hover {
+  background-color: #bbdefb;
+}
+
+.ai-assistant-prompt.listening {
+  background-color: #bbdefb;
+  box-shadow: 0 0 0 2px #2196F3;
+}
+
+.ai-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 18px;
+  -webkit-tap-highlight-color: transparent; /* Removes the tap highlight on mobile */
+  touch-action: manipulation; /* Improves touch responsiveness */
+}
+
+/* Add padding around the icon for better touch area without changing visual size */
+.ai-assistant-prompt {
+  background-color: #e3f2fd;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  margin: 0 15px 20px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+  .ai-icon {
+    width: 55px; /* Slightly larger on mobile */
+    height: 55px;
+    font-size: 20px;
+  }
+}
+
+.ai-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.5);
+}
+
+.ai-icon:active {
+  transform: scale(0.95);
+}
+
+.ai-icon.listening {
+  background-color: #f44336;
+}
+
+.ai-icon .pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+.ai-message h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ai-message p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+.voice-input {
+  color: #2196F3 !important;
+  font-weight: 500 !important;
+}
+
+/* Bottom navigation - Remove this section as it's now handled by the Navigation component */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  height: 60px; /* Fixed height */
+}
+
+/* Side navigation for desktop - Remove this section as it's now handled by the Navigation component */
+.side-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  background-color: #fff;
+  padding-top: 80px; /* Space for the header */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+  z-index: 50;
+}
+
+/* Update dashboard container for desktop - Keep this but modify to work with Navigation component */
+@media (min-width: 769px) {
+  .dashboard {
+    padding-left: 0; /* Remove this as it's handled by Navigation component */
+  }
+}
+
+.dashboard-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-bottom: 60px; /* Space for bottom navigation on mobile */
+}
+
+/* For desktop, add margin for side navigation */
+@media (min-width: 769px) {
+  .dashboard-content {
+    margin-left: 240px; /* Width of expanded side navigation */
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* When side navigation is collapsed */
+  .side-navigation.collapsed + .dashboard-content {
+    margin-left: 60px;
+  }
+}
+
+.dashboard-content {
+  padding: 20px;
+}
+
+.welcome-section {
+  margin-bottom: 20px;
+}
+
+.welcome-section h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.welcome-section p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.dashboard-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card-header h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.card-header svg {
+  color: #007bff;
+  font-size: 1.2rem;
+}
+
+/* Health Metrics */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.metric-item {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.metric-name {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.metric-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.metric-status {
+  font-size: 0.75rem;
+  padding: 2px 0;
+}
+
+.metric-status.normal {
+  color: #28a745;
+}
+
+.metric-status.warning {
+  color: #ffc107;
+}
+
+.metric-status.alert {
+  color: #dc3545;
+}
+
+/* Appointments */
+.appointments-list {
+  margin-bottom: 15px;
+}
+
+.appointment-item {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.appointment-item:last-child {
+  border-bottom: none;
+}
+
+.appointment-date {
+  min-width: 80px;
+  font-weight: 600;
+  color: #007bff;
+}
+
+.appointment-details {
+  flex: 1;
+}
+
+.appointment-doctor {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.appointment-type {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.appointment-time {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Medications */
+.medications-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.medication-count {
+  display: flex;
+  flex-direction: column;
+}
+
+.medication-count .count {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.medication-count .label {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.medication-reminder {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.medication-reminder svg {
+  color: #dc3545;
+  margin-right: 5px;
+}
+
+/* Health Records */
+.records-summary {
+  margin-bottom: 15px;
+}
+
+.records-summary p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Common Button Style */
+.view-all-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: none;
+  border-radius: 8px;
+  color: #007bff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.view-all-btn:hover {
+  background-color: #e9ecef;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 20px 0;
+  color: #6c757d;
+}
+
+/* For desktop, add margin for side navigation */
+@media (min-width: 769px) {
+  .dashboard-content {
+    margin-left: 240px; /* Width of expanded side navigation */
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* When side navigation is collapsed */
+  .side-navigation.collapsed + .dashboard-content {
+    margin-left: 60px;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ensure no horizontal scrolling */
+@media (max-width: 768px) {
+  .dashboard-container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .dashboard-content {
+    padding: 15px;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}

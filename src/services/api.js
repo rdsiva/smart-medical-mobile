@@ -1,19 +1,16 @@
 import axios from 'axios';
-import { store } from '../store';
+import store from '../store';
 import { refreshToken, logout } from '../slices/authSlice';
 
-// Base API URL
-const API_URL = 'http://localhost:5000/api';
-
-// Create axios instance
+// Create an axios instance
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000/api',
   headers: {
-    'Content-Type': 'application/json',
-  },
+    'Content-Type': 'application/json'
+  }
 });
 
-// Add request interceptor
+// Request interceptor for adding the auth token
 api.interceptors.request.use(
   (config) => {
     const state = store.getState();
@@ -25,16 +22,12 @@ api.interceptors.request.use(
     
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
-// Add response interceptor
+// Response interceptor for handling token refresh
 api.interceptors.response.use(
-  (response) => {
-    return response;
-  },
+  (response) => response,
   async (error) => {
     const originalRequest = error.config;
     
@@ -47,13 +40,13 @@ api.interceptors.response.use(
         await store.dispatch(refreshToken());
         const state = store.getState();
         
-        // If token refresh was successful, retry the original request
+        // If we got a new token, retry the original request
         if (state.auth.token) {
           originalRequest.headers.Authorization = `Bearer ${state.auth.token}`;
           return api(originalRequest);
         }
       } catch (refreshError) {
-        // If token refresh failed, logout the user
+        // If refresh failed, logout the user
         store.dispatch(logout());
         return Promise.reject(refreshError);
       }

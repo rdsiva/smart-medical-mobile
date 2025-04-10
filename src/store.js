@@ -1,16 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './slices/authSlice';
-import profileReducer from './slices/profileSlice';
-import medicationReducer from './slices/medicationSlice';
-import appointmentReducer from './slices/appointmentSlice';
-import aiAssistantReducer from './slices/aiAssistantSlice';
+// We'll create these slices later
+// import medicalRecordsReducer from './slices/medicalRecordsSlice';
+// import appointmentsReducer from './slices/appointmentsSlice';
+// import notificationsReducer from './slices/notificationsSlice';
+// import medicationsReducer from './slices/medicationsSlice';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     auth: authReducer,
-    profile: profileReducer,
-    medication: medicationReducer,
-    appointment: appointmentReducer,
-    aiAssistant: aiAssistantReducer,
+    // medicalRecords: medicalRecordsReducer,
+    // appointments: appointmentsReducer,
+    // notifications: notificationsReducer,
+    // medications: medicationsReducer,
   },
 });
+
+export default store;

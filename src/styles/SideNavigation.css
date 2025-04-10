@@ -1,0 +1,84 @@
+.side-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  padding-top: 60px;
+}
+
+.side-navigation.collapsed {
+  transform: translateX(-100%);
+}
+
+/* Remove this media query that's hiding the side navigation on mobile */
+/* @media (max-width: 768px) {
+  .side-navigation {
+    display: none;
+  }
+} */
+
+/* Instead, let's modify the behavior for desktop */
+@media (min-width: 769px) {
+  .side-navigation {
+    transform: translateX(0) !important; /* Force show on desktop */
+  }
+  
+  .close-btn {
+    display: none; /* Hide close button on desktop */
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #666;
+  text-decoration: none;
+}
+
+.nav-item.active {
+  color: #2196F3;
+  background-color: #e3f2fd;
+  border-left: 3px solid #2196F3;
+}
+
+.nav-item:hover:not(.active) {
+  background-color: #f8f9fa;
+}
+
+.nav-item svg {
+  font-size: 1.2rem;
+  margin-right: 15px;
+  min-width: 20px;
+}
+
+.nav-item span {
+  font-size: 0.9rem;
+}

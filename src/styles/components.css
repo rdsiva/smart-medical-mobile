@@ -1,0 +1,96 @@
+/* Card components */
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: var(--spacing-xxl);
+}
+
+/* Logo styles */
+/* Add this to your components.css file */
+.medical-logo {
+  width: 120px;
+  height: 120px;
+}
+
+/* Update the logo-container class */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.logo-circle {
+  width: 120px;
+  height: 120px;
+  background-color: var(--primary-color);
+  border-radius: var(--radius-circle);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-size: var(--font-xl);
+  font-weight: bold;
+}
+
+/* Auth pages specific */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-light);
+  padding: var(--spacing-lg);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-title {
+  font-size: var(--font-xxl);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.auth-subtitle {
+  font-size: var(--font-md);
+  color: var(--text-medium);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Touch ID component */
+.touch-id-container {
+  margin: var(--spacing-xl) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.touch-id-circle {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--radius-circle);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.touch-id-icon {
+  font-size: var(--font-xl);
+}
+
+.touch-id-text {
+  color: var(--text-medium);
+  font-size: var(--font-sm);
+}
+
+/* Link groups */
+.link-group {
+  margin-top: var(--spacing-lg);
+  font-size: var(--font-sm);
+  color: var(--text-medium);
+}

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { appointmentService } from '../services/services';
+import { appointmentService } from '../services/appointmentService';
 
 // Async thunks
 export const getAppointments = createAsyncThunk(
