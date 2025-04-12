@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaHome, FaCalendarAlt, FaUser, FaClipboardList, FaPills, FaTimes } from 'react-icons/fa';
+import { FaHome, FaCalendarAlt, FaUser, FaClipboardList, FaPills, FaIdCard, FaTimes } from 'react-icons/fa';
 import '../styles/SideNavigation.css';
 
 const SideNavigation = ({ activeItem }) => {
@@ -71,6 +71,13 @@ const SideNavigation = ({ activeItem }) => {
           >
             <FaClipboardList />
             <span>Records</span>
+          </div>
+          <div 
+            className={`nav-item ${activeItem === 'insurance' ? 'active' : ''}`}
+            onClick={() => handleNavigation('/insurance')}
+          >
+            <FaIdCard />
+            <span>Insurance</span>
           </div>
           <div 
             className={`nav-item ${activeItem === 'profile' ? 'active' : ''}`}

@@ -8,11 +8,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
-import MedicalRecords from './components/MedicalRecords';
+import HealthRecords from './components/HealthRecords';
+import LabResultDetail from './components/LabResultDetail';
 import Appointments from './components/Appointments';
 import Medications from './components/Medications';
+import Insurance from './components/Insurance';
 import Notifications from './components/Notifications';
 import Profile from './components/Profile';
+import PersonalInfoFlow from './components/PersonalInfoFlow';
+import HealthcareProviders from './components/HealthcareProviders';
+import Accessibility from './components/Accessibility';
+import NotificationSettings from './components/NotificationSettings';
 
 import Footer from './components/Footer';
 
@@ -41,11 +47,17 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/medical-records" element={<MedicalRecords />} />
+            <Route path="/records" element={<HealthRecords />} />
+            <Route path="/records/lab/:id" element={<LabResultDetail />} />
             <Route path="/appointments" element={<Appointments />} />
             <Route path="/medications" element={<Medications />} />
+            <Route path="/insurance" element={<Insurance />} />
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/personal-info" element={<PersonalInfoFlow />} />
+            <Route path="/profile/providers" element={<HealthcareProviders />} />
+            <Route path="/profile/accessibility" element={<Accessibility />} />
+            <Route path="/profile/notification-settings" element={<NotificationSettings />} />
           </Routes>
         )}
         {/* Footer is removed for mobile view */}

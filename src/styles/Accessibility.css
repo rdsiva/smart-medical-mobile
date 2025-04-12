@@ -1,0 +1,244 @@
+.accessibility-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-bottom: 70px; /* Space for bottom navigation on mobile */
+}
+
+.accessibility-content {
+  padding: 20px;
+}
+
+/* For desktop, add margin for side navigation */
+@media (min-width: 769px) {
+  .accessibility-content {
+    margin-left: 250px; /* Width of side navigation */
+    transition: margin-left 0.3s ease;
+  }
+  
+  .accessibility-container {
+    padding-bottom: 0;
+  }
+}
+
+.accessibility-header {
+  margin-bottom: 25px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #2196F3;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.accessibility-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.accessibility-section {
+  margin-bottom: 25px;
+}
+
+.accessibility-section h2 {
+  margin: 0 0 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Text Size Control */
+.text-size-control {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.text-size-small {
+  font-size: 14px;
+  color: #757575;
+  margin-right: 10px;
+}
+
+.text-size-large {
+  font-size: 22px;
+  color: #757575;
+  margin-left: 10px;
+}
+
+.text-size-label {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #757575;
+}
+
+.slider {
+  flex: 1;
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #e0e0e0;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2196F3;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2196F3;
+  cursor: pointer;
+}
+
+/* Contrast Options */
+.contrast-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contrast-option {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.contrast-option.selected {
+  border: 2px solid #2196F3;
+}
+
+.radio-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #bdbdbd;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-button-inner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #2196F3;
+}
+
+.contrast-option.selected .radio-button {
+  border-color: #2196F3;
+}
+
+/* Toggle Switch */
+.toggle-option {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e0e0e0;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #2196F3;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+/* Save Button */
+.save-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Hover effects for desktop */
+@media (min-width: 769px) {
+  .contrast-option:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .save-btn:hover {
+    background-color: #1976D2;
+  }
+  
+  .back-btn:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,231 @@
+.medications-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-bottom: 70px; /* Space for bottom navigation on mobile */
+}
+
+.medications-content {
+  padding: 20px;
+}
+
+/* For desktop, add margin for side navigation */
+@media (min-width: 769px) {
+  .medications-content {
+    margin-left: 250px; /* Width of side navigation */
+    transition: margin-left 0.3s ease;
+  }
+}
+
+.medications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.medications-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.add-medication-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2196F3;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Tabs */
+.medications-tabs {
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #757575;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  color: #2196F3;
+  border-bottom: 2px solid #2196F3;
+}
+
+/* Medication List */
+.medications-list {
+  padding: 0;
+}
+
+.medications-day {
+  margin-bottom: 30px;
+}
+
+.medications-day h2 {
+  margin: 0 0 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.medication-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.medication-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.medication-indicator.green {
+  background-color: #4CAF50;
+}
+
+.medication-indicator.blue {
+  background-color: #2196F3;
+}
+
+.medication-indicator.orange {
+  background-color: #FF9800;
+}
+
+.medication-icon-container {
+  margin-right: 15px;
+  margin-left: 10px;
+}
+
+.medication-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #757575;
+  font-size: 18px;
+}
+
+.medication-details {
+  flex: 1;
+}
+
+.medication-details h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.medication-details p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #757575;
+}
+
+.medication-instructions {
+  font-style: italic;
+}
+
+.medication-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.medication-time span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2196F3;
+  margin-bottom: 8px;
+}
+
+.status-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.status-icon.taken {
+  background-color: #E8F5E9;
+  color: #4CAF50;
+}
+
+.status-icon.upcoming {
+  background-color: #E3F2FD;
+  color: #2196F3;
+}
+
+.checkmark {
+  font-weight: bold;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 30px;
+  color: #757575;
+  font-style: italic;
+}
+
+/* Responsive styles for web */
+@media (min-width: 769px) {
+  .medications-container {
+    padding-bottom: 0;
+  }
+  
+  .medications-header {
+    padding: 0 0 20px;
+  }
+  
+  .medications-tabs {
+    padding: 0;
+  }
+  
+  .medications-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .medication-item {
+    transition: transform 0.2s ease;
+  }
+  
+  .medication-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
