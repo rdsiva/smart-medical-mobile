@@ -1,0 +1,153 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 100;
+}
+
+.app-logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.app-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.app-logo {
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.app-title {
+  margin: 0 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2196F3;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+}
+
+.notification-icon {
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.notification-icon a {
+  color: #666;
+}
+
+.user-menu-container {
+  position: relative;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #e3f2fd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #2196F3;
+  cursor: pointer;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 250px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.user-info {
+  padding: 15px;
+  background-color: #e3f2fd;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-info h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.user-info p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.user-menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-menu-items li {
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.user-menu-items li:hover {
+  background-color: #f5f5f5;
+}
+
+.user-menu-items li a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  width: 100%;
+}
+
+.user-menu-items li svg {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #2196F3;
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 16px;
+  }
+  
+  .app-logo {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+  
+  .user-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+}
